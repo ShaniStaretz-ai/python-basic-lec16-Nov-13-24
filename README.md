@@ -28,5 +28,35 @@
           first 0 and then 1
         * sort by palindrom first: lambda not w:==w[::-1]- because all condition returns True(1)/False(0)=True(1)=first then False(0)
         * sort nested list by second value [["moshe",89]]: lambda name_grade:name_grade[1]
+    * dictionary(hash-map): {key:value}- 
+      * init:
+      ```
+        grades_d:dict[str,int]=dict()
+        grades_d:dict[str,int]={'moshe':89,'danny':94}
+        thisdict = dict(name = "John", age = 36, country = "Norway")
+        ```
+      * access: 
+      ```
+      print(grades_d['moshe'])
+      print(grades_d.get('moshe'))- return  None if not exist
+      print(grades_d.get('moshe',-1))- return -1 if not exist
+      ```
+      * add to dict: if exist will override , else will add new
+        ```
+        dict[key]=value
+        dict['moshe']=99 
+        dict.update({"color": "red"})
+        dict.update({"color": "red","shani":87})
+        ```
+      * delete items:
+        * by key
+          ```
+          del  dict['moshe']
+          dict.pop('moshe']- returns the value
+          ```
+        * last item:
+          ```
+           last= dict.popitem()= return as tuple: (key,value)
+          ```
     
 ## extra subjects:
