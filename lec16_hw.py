@@ -9,11 +9,12 @@ print("by length of word", sorted(cities, key=lambda city: len(city)))
 # b
 print("by number of words", sorted(cities, key=lambda city: len(city.split(' '))))
 # c
-print("by last character", sorted(cities, key=lambda city: city[-1]))
-# d
+print("by last character", sorted(cities, key=lambda city: city[-1]))  # [o,k,s,n,y,i,i]
+
+# d: same start as c: [oykoT,kroY weN,siraP,nodnoL,yendyS,iabuD,iahgnahS] so same output
 print("by reverse word", sorted(cities, key=lambda city: city[::-1]))
 # e
-print("by counter of 'a's ", sorted(cities, key=lambda w: w.count('a')))
+print("by counter of 'a's ", sorted(cities, key=lambda city: city.count('a')))
 # f
 cities_miles = [["Tokyo", 5760, "Asia"], ["New York", 5690, "North America"],
                 ["Paris", 2050, "Europe"], ["London", 2240, "Europe"],
@@ -39,6 +40,7 @@ sentence = ("This chocolate cake is rich, moist, and full of delicious chocolate
             " To make the cake, you will need chocolate, flour, sugar, eggs, and butter."
             "After baking the chocolate cake, let the cake cool before adding the chocolate frosting.")
 dictionary_words: dict[str] = {}
+print(sentence)
 sentence_words = sentence.replace(',', ' ').replace('.', ' ').split()
 for word in sentence_words:
     dictionary_words[word] = dictionary_words.get(word, 0) + 1
@@ -61,11 +63,18 @@ for word in sentence_words:
 else:
     print(dictionary_characters)
 
-max_character_value = None
-max_character = ''
+min_character_value = None
+min_character = ''
 for c in dictionary_characters:
-    if max_character_value is None or max_character_value < dictionary_characters.get(c, 0):
-        max_character = c
-        max_character_value = dictionary_characters.get(c, 0)
+    if min_character_value is None or min_character_value > dictionary_characters.get(c, 0):
+        min_character = c
+        min_character_value = dictionary_characters.get(c, 0)
 else:
-    print(f"the character '{max_character}' appeared {max_character_value} times in the sentence")
+    print(f"the character '{min_character}' appeared {min_character_value} times in the sentence")
+
+# 3 numbers dictionary
+numbers_dictionary = {}
+for i in range(1, 20):
+    numbers_dictionary[i] = i ** 3
+x: int = int(input("enter number from the dictionary:"))
+print(f"the power of 3 of the number '{x}' from the dictionary is {numbers_dictionary.get(x, "not exist")}")
