@@ -54,7 +54,7 @@ for w in dictionary_words:
         max_word = w
         max_word_value = dictionary_words.get(w, 0)
 else:
-    print(f"the word '{max_word}' appeared {max_word_value} times in the sentence")
+    print(f"the word '{max_word}' appeared the most times in the sentence")
 
 dictionary_characters: dict[str] = {}
 for word in sentence_words:
@@ -70,7 +70,7 @@ for c in dictionary_characters:
         min_character = c
         min_character_value = dictionary_characters.get(c, 0)
 else:
-    print(f"the character '{min_character}' appeared {min_character_value} times in the sentence")
+    print(f"the character '{min_character}' appeared the least times in the sentence")
 
 # 3 numbers dictionary
 numbers_dictionary = {}
