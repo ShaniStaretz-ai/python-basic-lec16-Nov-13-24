@@ -41,7 +41,7 @@ sentence = ("This chocolate cake is rich, moist, and full of delicious chocolate
             "After baking the chocolate cake, let the cake cool before adding the chocolate frosting.")
 dictionary_words: dict[str] = {}
 print(sentence)
-sentence_words = sentence.replace(',', ' ').replace('.', ' ').split()
+sentence_words = sentence.lower().replace(',', '').replace('.', '').split()
 for word in sentence_words:
     dictionary_words[word] = dictionary_words.get(word, 0) + 1
 else:
@@ -62,6 +62,7 @@ for word in sentence_words:
         dictionary_characters[c] = dictionary_characters.get(c, 0) + 1
 else:
     print(dictionary_characters)
+
 
 min_character_value = None
 min_character = ''
